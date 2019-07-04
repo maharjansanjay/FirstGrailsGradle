@@ -48,6 +48,7 @@ dependencies {
     compile "org.grails.plugins:gsp"
 
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
+    compile 'org.grails.plugins:spring-security-core:3.2.3'
 
     console "org.grails:grails-console"
     profile "org.grails.profiles:web"

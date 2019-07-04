@@ -24,7 +24,10 @@
 
     <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">
         <ul class="nav navbar-nav ml-auto">
-            <g:link controller="register" action="index">Register</g:link>
+            <li class="nav-item">
+                <g:link class="nav-link" controller="logout" action="index">Logout</g:link>
+            </li>
+
         </ul>
     </div>
 
