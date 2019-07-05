@@ -24,6 +24,18 @@
 
     <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">
         <ul class="nav navbar-nav ml-auto">
+
+            <sec:ifLoggedIn>
+                <li class="nav-item">
+                    <p class="nav-link">Welcome Back!<sec:loggedInUserInfo field='username'/></p>
+                </li>
+            </sec:ifLoggedIn>
+            <sec:ifAnyGranted roles='ADMIN'>
+                <li class="nav-item">
+                    <g:link class="nav-link" controller="Admin" action="index">Admin</g:link>
+                </li>
+            </sec:ifAnyGranted>
+
             <li class="nav-item">
                 <g:link class="nav-link" controller="logout" action="index">Logout</g:link>
             </li>
@@ -33,7 +45,31 @@
 
 </nav>
 
-<g:layoutBody/>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Side Menu</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="#studentSubmenu" data-toggle="collapse">Student</a>
+                <ul class="collapse list-unstyled" id="studentSubmenu">
+                    <li>
+                        <a href="#">List</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <g:layoutBody/>
+    </div>
+
+</div>
+
+
 
 <div class="footer row" role="contentinfo">
     <div class="col">
